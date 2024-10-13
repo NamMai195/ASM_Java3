@@ -7,7 +7,7 @@ import java.util.List;
 import poly.entity.NEWS;
 import poly.utils.JdbcHelper;
 
-public class NEWSDao extends WebDao<NEWS, Integer>{
+public class NEWSDao extends WebDao<NEWS, String>{
 	final String INSERT_SQL = "INSERT INTO NEWS(Id, Title, Content, Image, PostedDate, Author, ViewCount, CategoryId, Home) VALUES(?,?,?,?,?,?,?,?,?)";
 	final String UPDATE_SQL = "UPDATE NEWS SET Title=?, Content=?, Image=?, PostedDate=?, Author=?, ViewCount=?, CategoryId=?, Home=? WHERE Id=?";
 	final String DELETE_SQL = "DELETE FROM NEWS WHERE Id=?";
@@ -27,7 +27,7 @@ public class NEWSDao extends WebDao<NEWS, Integer>{
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(String id) {
         JdbcHelper.update(DELETE_SQL,id);
     }
 
@@ -37,7 +37,7 @@ public class NEWSDao extends WebDao<NEWS, Integer>{
     }
 
     @Override
-    public NEWS selectByid(Integer id) {
+    public NEWS selectByid(String id) {
     List<NEWS> list= selectBySql(SELECT_BY_ID_SQL,id);
         if(list.isEmpty()){
             return null;
