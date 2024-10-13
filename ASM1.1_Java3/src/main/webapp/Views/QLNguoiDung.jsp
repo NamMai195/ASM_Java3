@@ -387,7 +387,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
           <a href="#">SDT</a>
           <a href="#">FB</a>
           <a href="#">Zalo</a>
-          <a href="#">Mes Faebooks</a>
+          <a href="#">Mes</a>
         </nav>
       </footer>
     </div>

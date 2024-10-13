@@ -1,6 +1,7 @@
 package poly.servlet;
 
 import java.io.IOException;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
@@ -12,8 +13,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import poly.entity.NEWS;
-import poly.dao.NEWSDAO;
-import poly.dao.NEWSDAOImpl;
 @WebServlet({ "/NEWS/index", 
 			"/NEWS/edit/*", 
 			"/NEWS/create", 
@@ -30,7 +29,7 @@ public class NEWSServlet extends HttpServlet {
 		} catch (IllegalAccessException | InvocationTargetException e) {
 			e.printStackTrace();
 		}
-		NEWSDAO dao = new NEWSDAOImpl();
+		NEWSDAO dao = new NEWSDAO();
 		String path = req.getServletPath();
 		if (path.contains("edit")) {
 			String id = req.getPathInfo().substring(1);

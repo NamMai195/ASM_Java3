@@ -70,13 +70,4 @@ public class NEWSDao extends WebDao<NEWS, Integer>{
         }
         return list;
     }
-//    public  List<NguoiHoc> selectNotInCourse(int makh,String keword){
-//        String sql="SELECT * FROM NguoiHoc"
-//                + " WHERE HoTen LIKE ? AND"
-//                + " MaNH NOT IN (SELECT MaNH FROM HocVien WHERE MaKH=?)";
-//        return this.selectBySql(sql,"%"+keword+"%",makh);
-//    }
-
-
-    
 }
